@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+ Copyright (c) Microsoft Open Technologies, Inc.  All Rights Reserved.
+ Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+-->
+<plugin id="cordova-plugin-ms-files" version="0.5.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Files and Discovery for Cordova</name>
+    <description>Files and Discovery Cordova plugin.</description>
+
+    <license>Apache 2.0</license>
+    <keywords>microsoft, office365, files, discovery, sharepoint, onedrive</keywords>
+    <repo>https://github.com/OfficeDev/cordova-plugin-ms-files</repo>
+    <issue>https://github.com/OfficeDev/cordova-plugin-ms-files/issues</issue>
+
+    <dependency id="cordova-plugin-ms-adal" url="https://github.com/azuread/azure-activedirectory-library-for-cordova.git"/>
+    <dependency id="cordova-plugin-inappbrowser" />
+
+    <platform name="android">
+        <dependency id="cordova-plugin-whitelist" url="https://github.com/apache/cordova-plugin-whitelist.git"/>
+    </platform>
+
+    <js-module name="Files" src="www/sharepoint.js">
+        <clobbers target="Microsoft.Office.Files" />
+    </js-module>
+
+    <js-module name="DiscoveryServices" src="www/o365discovery.js">
+        <clobbers target="Microsoft.Office.Files.DiscoveryServices" />
+    </js-module>
+
+    <platform name="ios">
+    </platform>
+
+    <platform name="windows">
+    </platform>
+</plugin>

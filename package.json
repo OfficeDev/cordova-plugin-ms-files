@@ -1,0 +1,35 @@
+{
+  "name": "cordova-plugin-ms-files",
+  "version": "0.5.0",
+  "description": "Files and Discovery Cordova plugin.",
+  "cordova": {
+    "id": "cordova-plugin-ms-files",
+    "platforms": [
+      "android",
+      "ios",
+      "windows"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OfficeDev/cordova-plugin-ms-files.git"
+  },
+  "keywords": [
+    "microsoft",
+    "office365",
+    "files",
+    "discovery",
+    "sharepoint",
+    "onedrive",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-windows"
+  ],
+  "author": "MSOpenTech",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/OfficeDev/cordova-plugin-ms-files/issues"
+  },
+  "homepage": "https://github.com/OfficeDev/cordova-plugin-ms-files#readme"
+}
