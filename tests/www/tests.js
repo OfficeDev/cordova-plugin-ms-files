@@ -1,4 +1,7 @@
-/* global cordova, exports, Exchange, O365Auth, jasmine, describe, it, expect, beforeEach, afterEach, pending */
+
+// Copyright (c) Microsoft Open Technologies, Inc.  All rights reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+
+/* global exports, require, Microsoft, jasmine, describe, it, xit, expect, beforeEach, afterEach */
 
 var TENANT_ID = '17bf7168-5251-44ed-a3cf-37a5997cc451';
 var AUTH_URL = 'https://login.windows.net/' + TENANT_ID + '/';
@@ -31,8 +34,8 @@ exports.defineAutoTests = function () {
 
     function fail(done, err) {
         expect(err).toBeUndefined();
-        if (err != null) {
-            if (err.responseText != null) {
+        if (err !== null) {
+            if (err.responseText !== null) {
                 expect(err.responseText).toBeUndefined();
                 console.error('Error: ' + err.responseText);
             } else {
@@ -41,7 +44,7 @@ exports.defineAutoTests = function () {
         }
 
         done();
-    };
+    }
 
     function createAuthContext() {
         return new AuthenticationContext(AUTH_URL);
@@ -97,7 +100,7 @@ exports.defineAutoTests = function () {
                 console.log("Token is: " + authResult.accessToken);
                 expect(authResult).toBeDefined();
                 done();
-            }, function (err) {
+            }, function () {
                 console.warn("You should login in the manual tests first");
 
                 authContext.acquireTokenAsync(RESOURCE_URL, APP_ID, REDIRECT_URL).then(function (authResult) {
@@ -273,8 +276,8 @@ exports.defineAutoTests = function () {
                         }, function (err) {
                             expect(err).toBeUndefined();
 
-                            if (err != null) {
-                                if (err.responseText != null) {
+                            if (err !== null) {
+                                if (err.responseText !== null) {
                                     expect(err.responseText).toBeUndefined();
                                     console.error('Error: ' + err.responseText);
                                 } else {
@@ -287,8 +290,8 @@ exports.defineAutoTests = function () {
                     } catch (err) {
                         expect(err).toBeUndefined();
 
-                        if (err != null) {
-                            if (err.responseText != null) {
+                        if (err !== null) {
+                            if (err.responseText !== null) {
                                 expect(err.responseText).toBeUndefined();
                                 console.error('Error: ' + err.responseText);
                             } else {

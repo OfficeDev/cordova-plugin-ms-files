@@ -18,16 +18,19 @@ var appId = '3cfa20df-bca4-4131-ab92-626fb800ebb5';
 var redirectUrl = 'http://test.com';
 
 var AuthenticationContext = Microsoft.ADAL.AuthenticationContext;
+var DiscoveryServices = Microsoft.Office.Files.DiscoveryServices;
+var SharePointClient = Microsoft.Office.Files.SharePointClient;
 
 var authContext = new AuthenticationContext(authority);
-var discoveryContext = new Microsoft.Office.Files.DiscoveryServices.Context(authContext, appId, redirectUrl);
+var discoveryContext = new DiscoveryServices.Context(authContext, appId, redirectUrl);
 var sharePointClient;
 
 discoveryContext.services(resource).then(function (capabilities) {
     capabilities.forEach(function (v) {
         if (v.capability === 'MyFiles') {
             var msg;
-            sharePointClient = new Microsoft.Office.Files.SharePointClient(v.endpointUri, authContext, v.resourceId, appId, redirectUrl);
+            sharePointClient = SharePointClient(v.endpointUri, authContext,
+                v.resourceId, appId, redirectUrl);
 
             sharePointClient.files.getFileSystemItems().fetch().then(function (result) {
                 msg = '';

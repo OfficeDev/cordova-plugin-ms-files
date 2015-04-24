@@ -1,4 +1,7 @@
-﻿var Deferred = require('cordova-plugin-ms-adal.utility').Utility.Deferred;
+﻿
+// Copyright (c) Microsoft Open Technologies, Inc.  All rights reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+
+var Deferred = require('cordova-plugin-ms-adal.utility').Utility.Deferred;
 var Exception = require('cordova-plugin-ms-adal.utility').Utility.Exception;
 
 var O365Discovery;
