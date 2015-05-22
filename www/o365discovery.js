@@ -120,7 +120,12 @@ var O365Discovery;
 
                 authContext.tokenCache.readItems().then(function (tokenCacheItems) {
                     var correspondingCacheItem = tokenCacheItems.filter(function (item) {
-                        return item.clientId === clientId;// && item.resource === resourceUrl;
+                        return item.clientId === clientId && item.resource === resourceUrl;
+                    })[0];
+
+                    correspondingCacheItem = correspondingCacheItem || tokenCacheItems.filter(function (item) {
+                        return item.clientId === clientId && item.isMultipleResourceRefreshToken === true 
+                            && item.authority.replace(/\/?$/, '/') === authContext.authority.replace(/\/?$/, '/'); // Ensuring trailing slash exists
                     })[0];
 
                     if (correspondingCacheItem == null) {
