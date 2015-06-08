@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-ms-files",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Files and Discovery Cordova plugin.",
   "cordova": {
     "id": "cordova-plugin-ms-files",
